@@ -2,7 +2,7 @@ STEP 1: PREPARE THE NUMBER
 Delete the App: If the number is currently being used on a regular WhatsApp or WhatsApp Business app on a phone, you must delete the account first.
 Go to Dashboard: Log in to facebook.com and open your App.
 
-STEP 2: ADD THE NUMBER TO META
+STEP 2: ADD THE NUMBER TO META USING POSTMAN
 
 Go to WhatsApp > API Setup (on the left menu).
 Scroll to the bottom and click Add Phone Number.
@@ -21,7 +21,7 @@ STEP 4: REGISTER THE NUMBER (POSTMAN)
 This tells Facebook "I am ready to use this number for the API."
 Open Postman and start a new request.
 Method: Set it to POST.
-URL: https://facebook.com
+URL: [https://facebook.com](https://graph.facebook.com/v18.0/{phone-number-id}/register)
 Auth Tab: Select Bearer Token and paste your Access Token from Meta.
 Body Tab: Select raw and JSON. Paste this:
 json
@@ -37,7 +37,7 @@ STEP 5: SEND A TEST MESSAGE (POSTMAN)
 This proves everything is working.
 Method: Set to POST.
 URL: Change the end of the URL from /register to /messages.
-https://facebook.com
+[https://facebook.com](https://graph.facebook.com/v18.0/{{phone_number_id}}/messages)
 Body Tab: Select raw and JSON. Paste this:
 json
 {
